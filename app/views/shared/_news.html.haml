@@ -1,7 +1,7 @@
 - if Spree::Post.all.any?
   .news-ticker
-    %h3 Latest News
-    %p
+    %h2 最新消息
+    %hr
     #news-container
       %ul
         - Spree::Post.published.each do |post|
@@ -17,6 +17,12 @@
       pause: 4000,
       animation: 'fade',
       mousePause: true,
-      showItems: 1
+      showItems: 2
     });
   });
+- else
+  .new-ticker
+    %h2 最新消息
+    %hr
+    #news-container
+      = 暂无消息
